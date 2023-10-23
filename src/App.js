@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import {SkeletonTheme} from 'react-loading-skeleton';
 
 import LoginPage from "./pages/Auth/LoginPage";
+import CategoriesPage from "./pages/Categories/CategoriesPage";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route index element={<LoginPage/>}/>
+                    <Route path={'/categories'} element={<CategoriesPage/>}/>
                 </Routes>
             </BrowserRouter>
         </SkeletonTheme>
