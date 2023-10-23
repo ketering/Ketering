@@ -81,7 +81,7 @@ const CardActive = () => {
                 console.log(parsed)
                 if (parsed.success) {
                     Swal.fire({
-                        icon:'success',
+                        icon: 'success',
                         title: "Narudžbina uspješno kreirana"
                     })
                     localStorage.setItem('mealsToOrder', 'deleted')
@@ -113,28 +113,34 @@ const CardActive = () => {
                             <Unicons.UilShoppingCart size="25" color="gray"/>}
                     </div>
                 </div>
-                <div className="mt-3">
-                    {meals?.map(meal =>
-                        <div key={meals.indexOf(meal)}>
-                            <MealCartCard data={meal} amt={amtMap.get(meal.id)}/>
-                        </div>
-                    ) || <Skeleton height={250} count={5}/>}
-                </div>
-                <div className="d-flex justify-content-between">
-                    <p className='m-0 fs-3'>Cijena:</p>
-                    <p className='m-0 fs-3'>{totalPrice}€</p>
-                </div>
-                <hr/>
-                <div>
-                    <form onSubmit={formSubmitHandler}>
+                <div className="mt-2" style={{maxHeight: 'calc(100vh - 170px)', overflowY: 'auto'}}>
+                    <div className="mt-3">
+                        {meals?.map(meal =>
+                            <div key={meals.indexOf(meal)}>
+                                <MealCartCard data={meal} amt={amtMap.get(meal.id)}/>
+                            </div>
+                        ) || <Skeleton height={250} count={5}/>}
+                    </div>
+                    <div className="d-flex justify-content-between">
+                        <p className='m-0 fs-3'>Cijena:</p>
+                        <p className='m-0 fs-3'>{totalPrice}€</p>
+                    </div>
+                    <hr/>
+                    <div>
+                        <form id={'orderForm'}>
                         <textarea onChange={formChangeHandler} className="form-control mb-2" name="description" rows={5}
                                   placeholder="Napomena"></textarea>
-                        <input onChange={formChangeHandler} defaultValue={orderInfo.inAdvance} type="number"
-                               className="form-control mb-2" placeholder={'Naruči unaprijed (broj dana)'}
-                               min={0}
-                               max={7} name="inAdvance"/>
-                        <button type="submit" className="btn btn-outline-primary w-100 mt-3">Naruči</button>
-                    </form>
+                            <input onChange={formChangeHandler} defaultValue={orderInfo.inAdvance} type="number"
+                                   className="form-control mb-2" placeholder={'Naruči unaprijed (broj dana)'}
+                                   min={0}
+                                   max={7} name="inAdvance"/>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" onClick={formSubmitHandler}
+                            className="btn btn-outline-primary w-100">Naruči
+                    </button>
                 </div>
             </div>
         </BottomNavbar>
