@@ -10,6 +10,7 @@ import SingleMealPage from "./pages/Meals/SingleMealPage";
 import CartPage from "./pages/Cart/CartPage";
 import MyOrdersPage from "./pages/Orders/MyOrdersPage";
 import SingleOrderPage from "./pages/Orders/SingleOrderPage";
+import MealsPage from "./pages/Meals/MealsPage";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path={'/categories'} element={<CategoriesPage/>}/>
                     <Route path={'/categories/:id'} element={<MealsByCategory/>}/>
 
+                    <Route path={'/meals'} element={<MealsPage/>}/>
                     <Route path={'/meals/:id'} element={<SingleMealPage/>}/>
 
                     <Route path={'/orders'} element={<MyOrdersPage/>}/>
