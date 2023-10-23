@@ -25,7 +25,7 @@ const MealsByCategory = () => {
         <BottomNavbar>
             <div className="container px-3 pt-4">
                 <div className="d-flex align-items-center">
-                    <div onClick={() => navigator(-1)}>
+                    <div onClick={() => navigator('/categories')}>
                         <Unicons.UilEstate size="25" color="gray"/>
                     </div>
                     <Unicons.UilAngleRightB size="25" color="gray"/>

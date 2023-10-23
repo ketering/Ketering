@@ -25,19 +25,19 @@ const BottomNavbar = (p) => {
                         <Unicons.UilCommentsAlt className="text-primary-emphasis" size="25"/> :
                         <Unicons.UilCommentsAlt size="25" color="gray"/>}
 
-                    <span className={path === '/categories' ? 'text-primary-emphasis' : 'text-secondary'}
+                    <span className={path.includes('/categories') ? 'text-primary-emphasis' : 'text-secondary'}
                           style={labelStyles}>Kategorije</span>
                 </div>
 
-                <div onClick={() => navigator('/resources')}
+                <div onClick={() => navigator('/meals')}
                      className="row m-0 cursor-pointer">
 
-                    {path === '/resources' ?
-                        <Unicons.UilNotebooks className="text-primary-emphasis" size="25"/> :
-                        <Unicons.UilNotebooks size="25" color="gray"/>}
+                    {path.includes('/meals') ?
+                        <Unicons.UilPizzaSlice className="text-primary-emphasis" size="25"/> :
+                        <Unicons.UilPizzaSlice size="25" color="gray"/>}
 
-                    <span className={path === '/resources' ? 'text-primary-emphasis' : 'text-secondary'}
-                          style={labelStyles}>Resursi</span>
+                    <span className={path.includes('/meals') ? 'text-primary-emphasis' : 'text-secondary'}
+                          style={labelStyles}>Obroci</span>
                 </div>
 
                 <div onClick={() => navigator('/reports')}
