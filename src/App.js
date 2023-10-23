@@ -5,6 +5,7 @@ import {SkeletonTheme} from 'react-loading-skeleton';
 
 import LoginPage from "./pages/Auth/LoginPage";
 import CategoriesPage from "./pages/Categories/CategoriesPage";
+import MealsByCategory from "./pages/Meals/MealsByCategory";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Routes>
                     <Route index element={<LoginPage/>}/>
                     <Route path={'/categories'} element={<CategoriesPage/>}/>
+                    <Route path={'/categories/:id'} element={<MealsByCategory/>}/>
                 </Routes>
             </BrowserRouter>
         </SkeletonTheme>

@@ -21,7 +21,7 @@ const BottomNavbar = (p) => {
                 <div onClick={() => navigator('/categories')}
                      className="row m-0 cursor-pointer">
 
-                    {path === '/categories' ?
+                    {path.includes('/categories') ?
                         <Unicons.UilCommentsAlt className="text-primary-emphasis" size="25"/> :
                         <Unicons.UilCommentsAlt size="25" color="gray"/>}
 
