@@ -12,7 +12,6 @@ const CartPage = () => {
         return (
             <BottomNavbar>
                 <div className="container px-3 pt-4">
-
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="d-flex align-items-center">
                             <div onClick={() => navigator(`/categories`)}>
