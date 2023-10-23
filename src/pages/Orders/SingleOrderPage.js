@@ -65,13 +65,13 @@ const SingleOrderPage = () => {
                             <hr/>
                         </div>
                     </div>
-                    <div className="mt-2">
-                        {order.meals?.map((meal) =>
-                            <div key={meal.id}>
-                                <MealCartCard data={meal} amt={meal.amount}/>
-                            </div>
-                        )}
-                    </div>
+                </div>
+                <div className="mt-2 mb-5 rounded-3" style={{maxHeight: 'calc(100vh - 350px)', overflowY: 'auto'}}>
+                    {order.meals?.map((meal) =>
+                        <div key={meal.id}>
+                            <MealCartCard data={meal} amt={meal.amount}/>
+                        </div>
+                    )}
                 </div>
             </div>
         </BottomNavbar>
