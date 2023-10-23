@@ -5,11 +5,13 @@ import BottomNavbar from "../../components/BottomNavbar";
 import * as Unicons from "@iconscout/react-unicons";
 import MealCartCard from "../../components/MealCartCard";
 import Skeleton from "react-loading-skeleton";
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const CardActive = () => {
     const location = useLocation()
     const path = location.pathname
+
+    const navigator = useNavigate();
 
     const mealsToOrder = localStorage.getItem('mealsToOrder').trim()
         .split('/')
