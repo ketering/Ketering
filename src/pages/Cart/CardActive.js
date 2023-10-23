@@ -85,6 +85,7 @@ const CardActive = () => {
                         title: "Narudžbina uspješno kreirana"
                     })
                     localStorage.setItem('mealsToOrder', 'deleted')
+                    navigator('/orders')
                 } else {
                     Swal.fire({
                         icon: 'error',
