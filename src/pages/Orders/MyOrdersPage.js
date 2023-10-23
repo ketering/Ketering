@@ -25,7 +25,7 @@ const MyOrdersPage = () => {
     return (
         <BottomNavbar>
             <div className="container px-3 pt-4">
-                <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-center mb-3">
                     <div className="d-flex align-items-center">
                         <Unicons.UilEstate size="25" color="gray"/>
                         <Unicons.UilAngleRightB size="25" color="gray"/>
@@ -37,7 +37,7 @@ const MyOrdersPage = () => {
                             <Unicons.UilShoppingCart size="25" color="gray"/>}
                     </div>
                 </div>
-                <div>
+                <div style={{maxHeight: 'calc(100vh - 120px)', overflowY: 'auto'}}>
                     <div className="pt-4">
                         {orders?.map(order =>
                             <div key={order.id}>
