@@ -11,6 +11,7 @@ import CartPage from "./pages/Cart/CartPage";
 import MyOrdersPage from "./pages/Orders/MyOrdersPage";
 import SingleOrderPage from "./pages/Orders/SingleOrderPage";
 import MealsPage from "./pages/Meals/MealsPage";
+import ShowUserPage from "./pages/User/ShowUserPage";
 
 function App() {
     return (
@@ -28,6 +29,8 @@ function App() {
                     <Route path={'/orders/:id'} element={<SingleOrderPage/>}/>
 
                     <Route path={'/cart'} element={<CartPage/>}/>
+
+                    <Route path={'/profile'} element={<ShowUserPage/>}/>
                 </Routes>
             </BrowserRouter>
         </SkeletonTheme>
