@@ -31,7 +31,7 @@ const SingleMealPage = () => {
 
     const formSubmitHandler = evt => {
         evt.preventDefault();
-        const prev = localStorage.getItem('mealsToOrder').trim();
+        const prev = localStorage.getItem('mealsToOrder');
         if (prev === 'deleted') {
             localStorage.setItem('mealsToOrder', orderInfo);
         } else {
