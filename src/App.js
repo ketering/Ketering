@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import './assets/bootstrap/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import {SkeletonTheme} from 'react-loading-skeleton';
+
+import LoginPage from "./pages/Auth/LoginPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <SkeletonTheme baseColor={"#ebebeb"} highlightColor={"#f5f5f5"}>
+            <BrowserRouter>
+                <Routes>
+                    <Route index element={<LoginPage/>}/>
+                </Routes>
+            </BrowserRouter>
+        </SkeletonTheme>
+    )
 }
 
 export default App;
