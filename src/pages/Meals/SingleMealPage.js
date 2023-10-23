@@ -1,12 +1,15 @@
 import BottomNavbar from "../../components/BottomNavbar";
 import * as Unicons from "@iconscout/react-unicons";
-import {useNavigate, useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import ApiRequest from "../../Helpers/ApiRequest";
 import * as USolid from "@iconscout/react-unicons-solid";
 import Swal from "sweetalert2";
 
 const SingleMealPage = () => {
+    const location = useLocation()
+    const path = location.pathname
+
     const navigator = useNavigate();
     const params = useParams()
     const mealState = useState([]);
@@ -46,12 +49,19 @@ const SingleMealPage = () => {
     return (
         <BottomNavbar>
             <div className="container px-3 pt-4">
-                <div className="d-flex align-items-center">
-                    <div onClick={() => navigator(`/categories/${meal.category?.id}`)}>
-                        <Unicons.UilEstate size="25" color="gray"/>
+                <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex align-items-center">
+                        <div onClick={() => navigator(`/categories/${meal.category?.id}`)}>
+                            <Unicons.UilEstate size="25" color="gray"/>
+                        </div>
+                        <Unicons.UilAngleRightB size="25" color="gray"/>
+                        <p className="text-secondary m-0 fs-5 fw-medium">{meal?.name}</p>
                     </div>
-                    <Unicons.UilAngleRightB size="25" color="gray"/>
-                    <p className="text-secondary m-0 fs-5 fw-medium">{meal?.name}</p>
+                    <div onClick={() => navigator('/cart')}>
+                        {path.includes('/cart') ?
+                            <Unicons.UilShoppingCart className="text-primary-emphasis" size="25"/> :
+                            <Unicons.UilShoppingCart size="25" color="gray"/>}
+                    </div>
                 </div>
                 <div className='mt-3'>
                     <div className="card">

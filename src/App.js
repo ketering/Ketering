@@ -20,7 +20,7 @@ function App() {
 
                     <Route path={'/meals/:id'} element={<SingleMealPage/>}/>
 
-                    <Route path={'/cart'} element={<CartPage/>}></Route>
+                    <Route path={'/cart'} element={<CartPage/>}/>
                 </Routes>
             </BrowserRouter>
         </SkeletonTheme>

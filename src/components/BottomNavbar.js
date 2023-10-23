@@ -40,15 +40,15 @@ const BottomNavbar = (p) => {
                           style={labelStyles}>Obroci</span>
                 </div>
 
-                <div onClick={() => navigator('/cart')}
+                <div onClick={() => navigator('/orders')}
                      className="row m-0 cursor-pointer">
 
-                    {path.includes('/cart') ?
-                        <Unicons.UilShoppingCart className="text-primary-emphasis" size="25"/> :
-                        <Unicons.UilShoppingCart size="25" color="gray"/>}
+                    {path.includes('/orders') ?
+                        <Unicons.UilPackage className="text-primary-emphasis" size="25"/> :
+                        <Unicons.UilPackage size="25" color="gray"/>}
 
-                    <span className={path.includes('/cart') ? 'text-primary-emphasis' : 'text-secondary'}
-                          style={labelStyles}>Korpa</span>
+                    <span className={path.includes('/orders') ? 'text-primary-emphasis' : 'text-secondary'}
+                          style={labelStyles}>Narudžbine</span>
                 </div>
 
                 <div onClick={() => navigator('/profile')}
