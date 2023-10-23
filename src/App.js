@@ -13,6 +13,7 @@ import SingleOrderPage from "./pages/Orders/SingleOrderPage";
 import MealsPage from "./pages/Meals/MealsPage";
 import ShowUserPage from "./pages/User/ShowUserPage";
 import EditUserPage from "./pages/User/EditUserPage";
+import NotFound from "./components/NotFound";
 
 function App() {
     return (
@@ -33,6 +34,8 @@ function App() {
 
                     <Route path={'/profile'} element={<ShowUserPage/>}/>
                     <Route path={'/profile/edit'} element={<EditUserPage/>}/>
+
+                    <Route path='*' element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
         </SkeletonTheme>
