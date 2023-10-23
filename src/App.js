@@ -14,6 +14,7 @@ import MealsPage from "./pages/Meals/MealsPage";
 import ShowUserPage from "./pages/User/ShowUserPage";
 import EditUserPage from "./pages/User/EditUserPage";
 import NotFound from "./components/NotFound";
+import ProtectedRoute from "./middleware/ProtectedRoute";
 
 function App() {
     return (
@@ -21,19 +22,19 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route index element={<LoginPage/>}/>
-                    <Route path={'/categories'} element={<CategoriesPage/>}/>
-                    <Route path={'/categories/:id'} element={<MealsByCategory/>}/>
+                    <Route path={'/categories'} element={<ProtectedRoute><CategoriesPage/></ProtectedRoute>}/>
+                    <Route path={'/categories/:id'} element={<ProtectedRoute><MealsByCategory/></ProtectedRoute>}/>
 
-                    <Route path={'/meals'} element={<MealsPage/>}/>
-                    <Route path={'/meals/:id'} element={<SingleMealPage/>}/>
+                    <Route path={'/meals'} element={<ProtectedRoute><MealsPage/></ProtectedRoute>}/>
+                    <Route path={'/meals/:id'} element={<ProtectedRoute><SingleMealPage/></ProtectedRoute>}/>
 
-                    <Route path={'/orders'} element={<MyOrdersPage/>}/>
-                    <Route path={'/orders/:id'} element={<SingleOrderPage/>}/>
+                    <Route path={'/orders'} element={<ProtectedRoute><MyOrdersPage/></ProtectedRoute>}/>
+                    <Route path={'/orders/:id'} element={<ProtectedRoute><SingleOrderPage/></ProtectedRoute>}/>
 
-                    <Route path={'/cart'} element={<CartPage/>}/>
+                    <Route path={'/cart'} element={<ProtectedRoute><CartPage/></ProtectedRoute>}/>
 
-                    <Route path={'/profile'} element={<ShowUserPage/>}/>
-                    <Route path={'/profile/edit'} element={<EditUserPage/>}/>
+                    <Route path={'/profile'} element={<ProtectedRoute><ShowUserPage/></ProtectedRoute>}/>
+                    <Route path={'/profile/edit'} element={<ProtectedRoute><EditUserPage/></ProtectedRoute>}/>
 
                     <Route path='*' element={<NotFound/>}/>
                 </Routes>
