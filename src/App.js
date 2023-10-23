@@ -7,6 +7,7 @@ import LoginPage from "./pages/Auth/LoginPage";
 import CategoriesPage from "./pages/Categories/CategoriesPage";
 import MealsByCategory from "./pages/Meals/MealsByCategory";
 import SingleMealPage from "./pages/Meals/SingleMealPage";
+import CartPage from "./pages/Cart/CartPage";
 
 function App() {
     return (
@@ -18,6 +19,8 @@ function App() {
                     <Route path={'/categories/:id'} element={<MealsByCategory/>}/>
 
                     <Route path={'/meals/:id'} element={<SingleMealPage/>}/>
+
+                    <Route path={'/cart'} element={<CartPage/>}></Route>
                 </Routes>
             </BrowserRouter>
         </SkeletonTheme>
