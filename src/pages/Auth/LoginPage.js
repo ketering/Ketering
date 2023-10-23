@@ -36,6 +36,7 @@ const LoginPage = () => {
                 console.log(parsed)
                 if (parsed.success) {
                     localStorage.setItem('token', parsed.data.token)
+                    localStorage.setItem('mealsToOrder', 'deleted')
                     navigator('/categories');
                 } else {
                     Swal.fire({
