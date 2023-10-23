@@ -8,6 +8,7 @@ import CategoriesPage from "./pages/Categories/CategoriesPage";
 import MealsByCategory from "./pages/Meals/MealsByCategory";
 import SingleMealPage from "./pages/Meals/SingleMealPage";
 import CartPage from "./pages/Cart/CartPage";
+import MyOrdersPage from "./pages/Orders/MyOrdersPage";
 
 function App() {
     return (
@@ -19,6 +20,8 @@ function App() {
                     <Route path={'/categories/:id'} element={<MealsByCategory/>}/>
 
                     <Route path={'/meals/:id'} element={<SingleMealPage/>}/>
+
+                    <Route path={'/orders'} element={<MyOrdersPage/>}/>
 
                     <Route path={'/cart'} element={<CartPage/>}/>
                 </Routes>
