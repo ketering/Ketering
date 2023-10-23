@@ -40,28 +40,28 @@ const ShowUserPage = () => {
 
                             <div className="d-flex justify-content-between">
                                 <p className='m-0 fw-bold'>Ime</p>
-                                <p className="m-0">{user.name} {user.surname}</p>
+                                <p className="m-0">{user?.name} {user?.surname}</p>
                             </div>
 
                             <hr/>
 
                             <div className="d-flex justify-content-between">
                                 <p className='m-0 fw-bold'>Tip korisnika</p>
-                                <p className="m-0">{user.role}</p>
+                                <p className="m-0">{user?.role}</p>
                             </div>
 
                             <hr/>
 
                             <div className="d-flex justify-content-between">
                                 <p className='m-0 fw-bold'>Kompanija</p>
-                                <p className="m-0">{user.company}</p>
+                                <p className="m-0">{user?.company}</p>
                             </div>
 
                             <hr/>
 
                             <div className="d-flex justify-content-between">
                                 <p className='m-0 fw-bold'>E-mail</p>
-                                <p className="m-0">{user.email}</p>
+                                <p className="m-0">{user?.email}</p>
                             </div>
 
                         </div>

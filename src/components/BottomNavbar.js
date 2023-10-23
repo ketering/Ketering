@@ -54,11 +54,11 @@ const BottomNavbar = (p) => {
                 <div onClick={() => navigator('/profile')}
                      className="row m-0 cursor-pointer">
 
-                    {path === '/profile' ?
+                    {path.includes('/profile') ?
                         <Unicons.UilUser className="text-primary-emphasis" size="25"/> :
                         <Unicons.UilUser size="25" color="gray"/>}
 
-                    <span className={path === '/profile' ? 'text-primary-emphasis' : 'text-secondary'}
+                    <span className={path.includes('/profile') ? 'text-primary-emphasis' : 'text-secondary'}
                           style={labelStyles}>Nalog</span>
                 </div>
             </div>
