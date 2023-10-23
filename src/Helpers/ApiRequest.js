@@ -1,3 +1,5 @@
+import {useNavigate} from 'react-router-dom';
+
 /**
  * A class for making API requests with customizable headers.
  */
@@ -46,11 +48,23 @@ export default class ApiRequest {
 
         console.log(this)
 
-        return fetch(this.url, this.requestOptions)
+        const response = fetch(this.url, this.requestOptions)
             .then(response => response.text())
             .catch(error => {
                 console.log('error', error);
                 throw error;
             });
+
+        const checkResponse = async () => {
+            const resp = await response;
+            const jr = JSON.parse(resp);
+            if (jr.message === 'Unauthenticated.') {
+                localStorage.removeItem('token')
+            }
+        };
+
+        checkResponse();
+
+        return response;
     }
 }
